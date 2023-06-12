@@ -13,6 +13,19 @@
 		095015F32A3587DA008E046E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 095015F22A3587DA008E046E /* Preview Assets.xcassets */; };
 		095015FB2A358B0D008E046E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 095015FA2A358B0D008E046E /* FirebaseAuth */; };
 		095015FD2A358B0D008E046E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 095015FC2A358B0D008E046E /* FirebaseDatabase */; };
+		095015FF2A359048008E046E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 095015FE2A359048008E046E /* GoogleService-Info.plist */; };
+		095016012A3596CE008E046E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095016002A3596CE008E046E /* AppDelegate.swift */; };
+		095016032A35999D008E046E /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095016022A35999D008E046E /* Styles.swift */; };
+		095016072A35A0A5008E046E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095016062A35A0A5008E046E /* LoginView.swift */; };
+		098EDEC02A368E64002BFE04 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098EDEBF2A368E64002BFE04 /* LogoView.swift */; };
+		098EDEC22A368F4E002BFE04 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098EDEC12A368F4E002BFE04 /* User.swift */; };
+		098EDEC52A369278002BFE04 /* EmailTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098EDEC42A369278002BFE04 /* EmailTextFieldView.swift */; };
+		098EDEC72A36A5B6002BFE04 /* PasswordTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098EDEC62A36A5B6002BFE04 /* PasswordTextFieldView.swift */; };
+		098EDEC92A36A639002BFE04 /* LoginButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098EDEC82A36A639002BFE04 /* LoginButtonView.swift */; };
+		098EDECB2A36A701002BFE04 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098EDECA2A36A701002BFE04 /* MainTabView.swift */; };
+		098EDECD2A36A959002BFE04 /* ForgotPasswordButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098EDECC2A36A959002BFE04 /* ForgotPasswordButtonView.swift */; };
+		098EDECF2A36AA60002BFE04 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098EDECE2A36AA60002BFE04 /* RegisterView.swift */; };
+		098EDED22A36AA98002BFE04 /* GoToRegisterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098EDED12A36AA98002BFE04 /* GoToRegisterButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +34,19 @@
 		095015ED2A3587D8008E046E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		095015EF2A3587DA008E046E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		095015F22A3587DA008E046E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		095015FE2A359048008E046E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		095016002A3596CE008E046E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		095016022A35999D008E046E /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		095016062A35A0A5008E046E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		098EDEBF2A368E64002BFE04 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		098EDEC12A368F4E002BFE04 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		098EDEC42A369278002BFE04 /* EmailTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextFieldView.swift; sourceTree = "<group>"; };
+		098EDEC62A36A5B6002BFE04 /* PasswordTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextFieldView.swift; sourceTree = "<group>"; };
+		098EDEC82A36A639002BFE04 /* LoginButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonView.swift; sourceTree = "<group>"; };
+		098EDECA2A36A701002BFE04 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		098EDECC2A36A959002BFE04 /* ForgotPasswordButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordButtonView.swift; sourceTree = "<group>"; };
+		098EDECE2A36AA60002BFE04 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		098EDED12A36AA98002BFE04 /* GoToRegisterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToRegisterButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,9 +81,13 @@
 		095015EA2A3587D8008E046E /* TripTrack */ = {
 			isa = PBXGroup;
 			children = (
+				095016002A3596CE008E046E /* AppDelegate.swift */,
 				095015EB2A3587D8008E046E /* TripTrackApp.swift */,
-				095015ED2A3587D8008E046E /* ContentView.swift */,
+				095016042A3599C7008E046E /* Utility */,
+				098EDEC32A368F9B002BFE04 /* Model */,
+				095016052A359EF2008E046E /* View */,
 				095015EF2A3587DA008E046E /* Assets.xcassets */,
+				095015FE2A359048008E046E /* GoogleService-Info.plist */,
 				095015F12A3587DA008E046E /* Preview Content */,
 			);
 			path = TripTrack;
@@ -69,6 +99,55 @@
 				095015F22A3587DA008E046E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		095016042A3599C7008E046E /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				095016022A35999D008E046E /* Styles.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		095016052A359EF2008E046E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				095015ED2A3587D8008E046E /* ContentView.swift */,
+				098EDECA2A36A701002BFE04 /* MainTabView.swift */,
+				095016082A35A0AB008E046E /* Login */,
+				098EDED02A36AA65002BFE04 /* Register */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		095016082A35A0AB008E046E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				095016062A35A0A5008E046E /* LoginView.swift */,
+				098EDEBF2A368E64002BFE04 /* LogoView.swift */,
+				098EDEC42A369278002BFE04 /* EmailTextFieldView.swift */,
+				098EDEC62A36A5B6002BFE04 /* PasswordTextFieldView.swift */,
+				098EDEC82A36A639002BFE04 /* LoginButtonView.swift */,
+				098EDECC2A36A959002BFE04 /* ForgotPasswordButtonView.swift */,
+				098EDED12A36AA98002BFE04 /* GoToRegisterButtonView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		098EDEC32A368F9B002BFE04 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				098EDEC12A368F4E002BFE04 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		098EDED02A36AA65002BFE04 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				098EDECE2A36AA60002BFE04 /* RegisterView.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +217,7 @@
 			files = (
 				095015F32A3587DA008E046E /* Preview Assets.xcassets in Resources */,
 				095015F02A3587DA008E046E /* Assets.xcassets in Resources */,
+				095015FF2A359048008E046E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,8 +228,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				098EDECD2A36A959002BFE04 /* ForgotPasswordButtonView.swift in Sources */,
+				095016012A3596CE008E046E /* AppDelegate.swift in Sources */,
+				098EDECF2A36AA60002BFE04 /* RegisterView.swift in Sources */,
+				098EDEC02A368E64002BFE04 /* LogoView.swift in Sources */,
 				095015EE2A3587D8008E046E /* ContentView.swift in Sources */,
 				095015EC2A3587D8008E046E /* TripTrackApp.swift in Sources */,
+				098EDEC92A36A639002BFE04 /* LoginButtonView.swift in Sources */,
+				098EDECB2A36A701002BFE04 /* MainTabView.swift in Sources */,
+				095016072A35A0A5008E046E /* LoginView.swift in Sources */,
+				095016032A35999D008E046E /* Styles.swift in Sources */,
+				098EDED22A36AA98002BFE04 /* GoToRegisterButtonView.swift in Sources */,
+				098EDEC22A368F4E002BFE04 /* User.swift in Sources */,
+				098EDEC72A36A5B6002BFE04 /* PasswordTextFieldView.swift in Sources */,
+				098EDEC52A369278002BFE04 /* EmailTextFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +384,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 3.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ca.vgstudio.TripTrack;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.vako.TripTrack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -326,7 +418,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 3.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ca.vgstudio.TripTrack;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.vako.TripTrack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

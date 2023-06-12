@@ -6,12 +6,25 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseAuth
 
 @main
 struct TripTrackApp: App {
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
     var body: some Scene {
+        
         WindowGroup {
-            ContentView()
+            Group {
+                
+                if Auth.auth().currentUser == nil {
+                    ContentView()
+                } else {
+                    LoginView()
+                }
+            } .preferredColorScheme(.dark)
         }
     }
 }
