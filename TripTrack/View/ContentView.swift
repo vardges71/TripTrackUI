@@ -16,17 +16,7 @@ struct ContentView: View {
 //    MARK: - BODY
     var body: some View {
         
-        ZStack {
-            fullBackground(imageName: backImageName)
-            VStack {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundColor(.accentColor)
-                Text("Hello, world!")
-                    .foregroundColor(Color("projectYellow"))
-            }
-            .padding()
-        }
+        LoginView()
     }
 }
 

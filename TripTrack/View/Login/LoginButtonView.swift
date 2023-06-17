@@ -30,14 +30,14 @@ struct LoginButtonView: View {
                 .modifier(ActionButtonModifier())
         }
         .alert(isPresented: self.$showingAlert) { Alert(title: Text("Error..."), message: Text("\(errorDescription)"), dismissButton: .default(Text("OK"))) }
-        .fullScreenCover(isPresented: $showMainView) { MainTabView() }
+        .fullScreenCover(isPresented: $showMainView) { MainView() }
     }
     
     func checkUser(){
         
         Auth.auth().signIn(withEmail: user.email, password: user.password) { (result, error) in
             
-            if error != nil {
+            if error == nil {
                 
                 self.showingAlert.toggle()
                 self.errorDescription = error!.localizedDescription

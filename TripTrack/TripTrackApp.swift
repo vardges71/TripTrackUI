@@ -19,10 +19,10 @@ struct TripTrackApp: App {
         WindowGroup {
             Group {
                 
-                if Auth.auth().currentUser == nil {
-                    ContentView()
+                if Auth.auth().currentUser != nil {
+                    MainView()
                 } else {
-                    LoginView()
+                    ContentView()
                 }
             } .preferredColorScheme(.dark)
         }

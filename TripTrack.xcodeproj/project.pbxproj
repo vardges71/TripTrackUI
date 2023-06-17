@@ -22,10 +22,16 @@
 		098EDEC52A369278002BFE04 /* EmailTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098EDEC42A369278002BFE04 /* EmailTextFieldView.swift */; };
 		098EDEC72A36A5B6002BFE04 /* PasswordTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098EDEC62A36A5B6002BFE04 /* PasswordTextFieldView.swift */; };
 		098EDEC92A36A639002BFE04 /* LoginButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098EDEC82A36A639002BFE04 /* LoginButtonView.swift */; };
-		098EDECB2A36A701002BFE04 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098EDECA2A36A701002BFE04 /* MainTabView.swift */; };
+		098EDECB2A36A701002BFE04 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098EDECA2A36A701002BFE04 /* MainView.swift */; };
 		098EDECD2A36A959002BFE04 /* ForgotPasswordButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098EDECC2A36A959002BFE04 /* ForgotPasswordButtonView.swift */; };
 		098EDECF2A36AA60002BFE04 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098EDECE2A36AA60002BFE04 /* RegisterView.swift */; };
 		098EDED22A36AA98002BFE04 /* GoToRegisterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098EDED12A36AA98002BFE04 /* GoToRegisterButtonView.swift */; };
+		098EDED42A393C10002BFE04 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098EDED32A393C0F002BFE04 /* Utility.swift */; };
+		098EDEDA2A394163002BFE04 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098EDED92A394163002BFE04 /* HomeView.swift */; };
+		098EDEDC2A39417A002BFE04 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098EDEDB2A39417A002BFE04 /* ScanView.swift */; };
+		098EDEDE2A39418E002BFE04 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098EDEDD2A39418E002BFE04 /* SettingsView.swift */; };
+		098EDEE02A3941A0002BFE04 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098EDEDF2A3941A0002BFE04 /* HistoryView.swift */; };
+		098EDEE22A39A5C8002BFE04 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098EDEE12A39A5C8002BFE04 /* TabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,10 +49,16 @@
 		098EDEC42A369278002BFE04 /* EmailTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextFieldView.swift; sourceTree = "<group>"; };
 		098EDEC62A36A5B6002BFE04 /* PasswordTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextFieldView.swift; sourceTree = "<group>"; };
 		098EDEC82A36A639002BFE04 /* LoginButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonView.swift; sourceTree = "<group>"; };
-		098EDECA2A36A701002BFE04 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		098EDECA2A36A701002BFE04 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		098EDECC2A36A959002BFE04 /* ForgotPasswordButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordButtonView.swift; sourceTree = "<group>"; };
 		098EDECE2A36AA60002BFE04 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		098EDED12A36AA98002BFE04 /* GoToRegisterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToRegisterButtonView.swift; sourceTree = "<group>"; };
+		098EDED32A393C0F002BFE04 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		098EDED92A394163002BFE04 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		098EDEDB2A39417A002BFE04 /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
+		098EDEDD2A39418E002BFE04 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		098EDEDF2A3941A0002BFE04 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		098EDEE12A39A5C8002BFE04 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				095016022A35999D008E046E /* Styles.swift */,
+				098EDED32A393C0F002BFE04 /* Utility.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -113,9 +126,14 @@
 			isa = PBXGroup;
 			children = (
 				095015ED2A3587D8008E046E /* ContentView.swift */,
-				098EDECA2A36A701002BFE04 /* MainTabView.swift */,
+				098EDECA2A36A701002BFE04 /* MainView.swift */,
+				098EDED52A39410C002BFE04 /* Home */,
+				098EDED82A394138002BFE04 /* Settings */,
+				098EDED72A39412B002BFE04 /* History */,
+				098EDED62A39411E002BFE04 /* Scan */,
 				095016082A35A0AB008E046E /* Login */,
 				098EDED02A36AA65002BFE04 /* Register */,
+				098EDEE12A39A5C8002BFE04 /* TabView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -148,6 +166,38 @@
 				098EDECE2A36AA60002BFE04 /* RegisterView.swift */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		098EDED52A39410C002BFE04 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				098EDED92A394163002BFE04 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		098EDED62A39411E002BFE04 /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				098EDEDB2A39417A002BFE04 /* ScanView.swift */,
+			);
+			path = Scan;
+			sourceTree = "<group>";
+		};
+		098EDED72A39412B002BFE04 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				098EDEDF2A3941A0002BFE04 /* HistoryView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		098EDED82A394138002BFE04 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				098EDEDD2A39418E002BFE04 /* SettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,16 +281,22 @@
 				098EDECD2A36A959002BFE04 /* ForgotPasswordButtonView.swift in Sources */,
 				095016012A3596CE008E046E /* AppDelegate.swift in Sources */,
 				098EDECF2A36AA60002BFE04 /* RegisterView.swift in Sources */,
+				098EDEDE2A39418E002BFE04 /* SettingsView.swift in Sources */,
 				098EDEC02A368E64002BFE04 /* LogoView.swift in Sources */,
 				095015EE2A3587D8008E046E /* ContentView.swift in Sources */,
+				098EDED42A393C10002BFE04 /* Utility.swift in Sources */,
 				095015EC2A3587D8008E046E /* TripTrackApp.swift in Sources */,
 				098EDEC92A36A639002BFE04 /* LoginButtonView.swift in Sources */,
-				098EDECB2A36A701002BFE04 /* MainTabView.swift in Sources */,
+				098EDECB2A36A701002BFE04 /* MainView.swift in Sources */,
+				098EDEE22A39A5C8002BFE04 /* TabView.swift in Sources */,
 				095016072A35A0A5008E046E /* LoginView.swift in Sources */,
 				095016032A35999D008E046E /* Styles.swift in Sources */,
+				098EDEE02A3941A0002BFE04 /* HistoryView.swift in Sources */,
 				098EDED22A36AA98002BFE04 /* GoToRegisterButtonView.swift in Sources */,
 				098EDEC22A368F4E002BFE04 /* User.swift in Sources */,
+				098EDEDA2A394163002BFE04 /* HomeView.swift in Sources */,
 				098EDEC72A36A5B6002BFE04 /* PasswordTextFieldView.swift in Sources */,
+				098EDEDC2A39417A002BFE04 /* ScanView.swift in Sources */,
 				098EDEC52A369278002BFE04 /* EmailTextFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
