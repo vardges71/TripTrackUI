@@ -74,28 +74,9 @@ struct TabView: View {
 
 //  MARK: - PREVIEW
 
-//struct TabView_Previews: PreviewProvider {
-//
-//    static var previews: some View {
-//        TabView()
-//    }
-//}
+struct TabView_Previews: PreviewProvider {
 
-
-struct SettingsButton: View {
-    
-    @Binding var isSettingsVisible: Bool
-    
-    var body: some View {
-        
-        VStack {
-            Image(systemName: isSettingsVisible ? "gear.circle.fill" : "gear.circle")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 25, height: 25)
-            Text("settings")
-                .font(.caption2)
-        }
-        .foregroundColor(isSettingsVisible ? .accentColor : .gray)
+    static var previews: some View {
+        TabView(tabSelected: .constant(.home), isSettingsVisible: .constant(false))
     }
 }

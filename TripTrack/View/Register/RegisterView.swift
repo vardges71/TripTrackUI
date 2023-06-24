@@ -14,6 +14,7 @@ struct RegisterView: View {
     @State private var showLoginView = false
     var title = "Register"
     
+    @State var fullName: String = ""
     @State var email: String = ""
     @State var password: String = ""
     @State var re_password: String = ""
@@ -22,12 +23,17 @@ struct RegisterView: View {
     var body: some View {
         ZStack{
             fullBackground(imageName: backImage)
-            VStack {
-                
+            VStack(spacing: 20) {
+                RegisterFullNameTextFieldView(fullName: $fullName)
+                RegisterEmailTextFielsView(email: $email)
+                RegisterPasswordTextFieldView(password: $password)
+                RegisterRePasswordTextFieldView(re_password: $re_password)
+                RegisterButtonView(fullName: $fullName, email: $email, password: $password, re_password: $re_password)
                 Button("back to login") {
                     
                     self.showLoginView.toggle()
                 }
+                .padding(.top, 10)
                 .fullScreenCover(isPresented: $showLoginView) { LoginView() }
                 .foregroundColor(.accentColor)
             }
@@ -38,6 +44,6 @@ struct RegisterView: View {
 //  MARK: - PREVIEW
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterView()
+        RegisterView(fullName: "", email: "", password: "", re_password: "")
     }
 }

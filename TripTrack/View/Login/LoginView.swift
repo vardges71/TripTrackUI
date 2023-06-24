@@ -11,6 +11,7 @@ struct LoginView: View {
 //    MARK: - PROPERTIES
     
     @ObservedObject var user = User()
+    
     let backImage = "back"
     
 //    MARK: - BODY
@@ -20,8 +21,8 @@ struct LoginView: View {
             VStack(spacing: 20) {
                 LogoView()
                 Spacer()
-                EmailTextFieldView()
-                PasswordTextFieldView()
+                EmailTextFieldView(user: user)
+                PasswordTextFieldView(user: user)
                 LoginButtonView(user: user)
                 Spacer()
                 HStack(alignment: .bottom) {
@@ -37,6 +38,6 @@ struct LoginView: View {
 //  MARK: - PREVIEW
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(user: User())
     }
 }

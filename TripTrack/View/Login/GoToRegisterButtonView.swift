@@ -12,7 +12,6 @@ struct GoToRegisterButtonView: View {
     
     @State private var showRegView = false
     
-    
 //    MARK: - BODY
     var body: some View {
         Button("register") {

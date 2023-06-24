@@ -11,7 +11,6 @@ struct ContentView: View {
     
 //    MARK: - PROPERTIES
     
-    var backImageName = "back"
     
 //    MARK: - BODY
     var body: some View {

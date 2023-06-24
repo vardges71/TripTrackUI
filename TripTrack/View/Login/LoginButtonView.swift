@@ -37,7 +37,7 @@ struct LoginButtonView: View {
         
         Auth.auth().signIn(withEmail: user.email, password: user.password) { (result, error) in
             
-            if error == nil {
+            if error != nil {
                 
                 self.showingAlert.toggle()
                 self.errorDescription = error!.localizedDescription

@@ -9,6 +9,7 @@ import SwiftUI
 
 class User: ObservableObject {
     
+    @Published var fullName: String = ""
     @Published var id: String = ""
     @Published var email: String = ""
     @Published var password: String = ""
