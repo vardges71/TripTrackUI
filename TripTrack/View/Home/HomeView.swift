@@ -18,27 +18,30 @@ struct HomeView: View {
     
     //    MARK: - BODY
     var body: some View {
-        ZStack {
-            fullBackground(imageName: backImage)
-            VStack {
-                Text(homeMV.greetingText)
-                    .font(.subheadline)
-                    .multilineTextAlignment(.center)
-                    .padding(.top, 20)
-                Spacer()
-                Text("\(homeMV.lastTripText)")
-                    .font(.footnote)
-                    .multilineTextAlignment(.leading)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(20)
-                Spacer()
+        NavigationView {
+            ZStack {
+                fullBackground(imageName: backImage)
+                VStack {
+                    Text(homeMV.greetingText)
+                        .font(.subheadline)
+                        .multilineTextAlignment(.center)
+                    Spacer()
+                    Text("\(homeMV.lastTripText)")
+                        .font(.footnote)
+                        .multilineTextAlignment(.leading)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(20)
+                    Spacer()
+                }
+                .foregroundColor(.accentColor)
+                .onAppear{
+                    homeMV.getUserCredential()
+                    homeMV.getLastTrip()
+                }
             }
-            .padding(20)
-            .onAppear{
-                homeMV.getUserCredential()
-                homeMV.getLastTrip()
-            }
-        } .foregroundColor(.accentColor)
+        }
+        .navigationTitle(title)
+        .navigationBarTitleTextColor(Color("projectLabel"))
     }
 }
 
