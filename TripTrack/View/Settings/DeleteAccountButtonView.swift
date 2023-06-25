@@ -48,7 +48,7 @@ struct DeleteAccountButtonView: View {
                         ]
                     )
                 }
-                .fullScreenCover(isPresented: $showRegisterView) { ContentView() }
+                .fullScreenCover(isPresented: $showRegisterView) { RegisterView() }
             }
         }
     }

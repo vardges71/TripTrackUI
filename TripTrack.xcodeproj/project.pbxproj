@@ -43,6 +43,8 @@
 		09C4EFFE2A47909000E6B17A /* RegisterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4EFFD2A47909000E6B17A /* RegisterButtonView.swift */; };
 		09C4F0002A47918700E6B17A /* RegAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4EFFF2A47918700E6B17A /* RegAlerts.swift */; };
 		09C4F0022A47B06A00E6B17A /* RegisterFullNameTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4F0012A47B06A00E6B17A /* RegisterFullNameTextFieldView.swift */; };
+		09C4F0042A47E42900E6B17A /* HomeModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4F0032A47E42900E6B17A /* HomeModelView.swift */; };
+		09C4F0062A47F87E00E6B17A /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4F0052A47F87E00E6B17A /* Trip.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +83,8 @@
 		09C4EFFD2A47909000E6B17A /* RegisterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterButtonView.swift; sourceTree = "<group>"; };
 		09C4EFFF2A47918700E6B17A /* RegAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegAlerts.swift; sourceTree = "<group>"; };
 		09C4F0012A47B06A00E6B17A /* RegisterFullNameTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFullNameTextFieldView.swift; sourceTree = "<group>"; };
+		09C4F0032A47E42900E6B17A /* HomeModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModelView.swift; sourceTree = "<group>"; };
+		09C4F0052A47F87E00E6B17A /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +183,7 @@
 			children = (
 				098EDEC12A368F4E002BFE04 /* User.swift */,
 				09C4EFFF2A47918700E6B17A /* RegAlerts.swift */,
+				09C4F0052A47F87E00E6B17A /* Trip.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				098EDED92A394163002BFE04 /* HomeView.swift */,
+				09C4F0032A47E42900E6B17A /* HomeModelView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -327,9 +333,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09C4F0062A47F87E00E6B17A /* Trip.swift in Sources */,
 				098EDECD2A36A959002BFE04 /* ForgotPasswordButtonView.swift in Sources */,
 				095016012A3596CE008E046E /* AppDelegate.swift in Sources */,
 				098EDECF2A36AA60002BFE04 /* RegisterView.swift in Sources */,
+				09C4F0042A47E42900E6B17A /* HomeModelView.swift in Sources */,
 				098EDEE72A3D4BE5002BFE04 /* SettingView.swift in Sources */,
 				098EDEC02A368E64002BFE04 /* LogoView.swift in Sources */,
 				095015EE2A3587D8008E046E /* ContentView.swift in Sources */,
