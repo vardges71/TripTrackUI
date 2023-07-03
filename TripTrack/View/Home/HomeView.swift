@@ -12,9 +12,11 @@ struct HomeView: View {
     
     let backImage = "back"
     
-    @StateObject var homeMV = HomeModelView()
+    @StateObject var homeMV = HomeViewModel()
     @StateObject var user: User = User()
     let title = "TripTrack"
+    
+    @State private var showMessage = false
     
     //    MARK: - BODY
     var body: some View {
@@ -23,20 +25,41 @@ struct HomeView: View {
                 fullBackground(imageName: backImage)
                 VStack {
                     Text(homeMV.greetingText)
-                        .font(.subheadline)
+                        .font(.callout)
                         .multilineTextAlignment(.center)
                     Spacer()
-                    Text("\(homeMV.lastTripText)")
+                    Text(homeMV.lastTripText)
+                        .onLongPressGesture(perform: {
+                            UIPasteboard.general.string = homeMV.lastTripText
+                            withAnimation(.easeInOut(duration: 0.5)) {
+                                showMessage = true
+                                }
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                withAnimation(.easeInOut(duration: 1.0)) {
+                                    showMessage = false
+                                }
+                            }
+                        })
                         .font(.footnote)
                         .multilineTextAlignment(.leading)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(20)
                     Spacer()
+                    if showMessage {
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(Color("messageBack"))
+                            .scaleEffect(showMessage ? 1.0 : 0.0)
+                            .frame(maxWidth: .infinity, maxHeight: 60)
+                            .padding()
+                            .overlay {
+                                Text("copied")
+                                    .foregroundColor(.gray)
+                            }
+                    }
                 }
                 .foregroundColor(.accentColor)
                 .onAppear{
                     homeMV.getUserCredential()
-                    homeMV.getLastTrip()
                 }
             }
         }

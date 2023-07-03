@@ -36,6 +36,7 @@
 		098EDEE92A3D4CBD002BFE04 /* AboutViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098EDEE82A3D4CBD002BFE04 /* AboutViewButton.swift */; };
 		098EDEEB2A3D4CED002BFE04 /* LogoutButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098EDEEA2A3D4CED002BFE04 /* LogoutButtonView.swift */; };
 		098EDEED2A3D4D13002BFE04 /* DeleteAccountButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098EDEEC2A3D4D13002BFE04 /* DeleteAccountButtonView.swift */; };
+		09B602E22A4FCBB400FA5E0A /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B602E12A4FCBB400FA5E0A /* Vehicle.swift */; };
 		09C4EFF52A477F7400E6B17A /* AboutPrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4EFF42A477F7400E6B17A /* AboutPrivacyView.swift */; };
 		09C4EFF82A478F2B00E6B17A /* RegisterEmailTextFielsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4EFF72A478F2A00E6B17A /* RegisterEmailTextFielsView.swift */; };
 		09C4EFFA2A478FD800E6B17A /* RegisterPasswordTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4EFF92A478FD800E6B17A /* RegisterPasswordTextFieldView.swift */; };
@@ -43,8 +44,14 @@
 		09C4EFFE2A47909000E6B17A /* RegisterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4EFFD2A47909000E6B17A /* RegisterButtonView.swift */; };
 		09C4F0002A47918700E6B17A /* RegAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4EFFF2A47918700E6B17A /* RegAlerts.swift */; };
 		09C4F0022A47B06A00E6B17A /* RegisterFullNameTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4F0012A47B06A00E6B17A /* RegisterFullNameTextFieldView.swift */; };
-		09C4F0042A47E42900E6B17A /* HomeModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4F0032A47E42900E6B17A /* HomeModelView.swift */; };
+		09C4F0042A47E42900E6B17A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4F0032A47E42900E6B17A /* HomeViewModel.swift */; };
 		09C4F0062A47F87E00E6B17A /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4F0052A47F87E00E6B17A /* Trip.swift */; };
+		09C4F0082A48AAE200E6B17A /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4F0072A48AAE200E6B17A /* CameraView.swift */; };
+		09C4F00A2A48AAFA00E6B17A /* CameraViewBottomPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4F0092A48AAFA00E6B17A /* CameraViewBottomPanel.swift */; };
+		09C4F00C2A48AB4A00E6B17A /* ScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4F00B2A48AB4A00E6B17A /* ScannerVC.swift */; };
+		09C4F0122A48FB2E00E6B17A /* ScanResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4F0112A48FB2E00E6B17A /* ScanResultView.swift */; };
+		09C4F0162A490AA300E6B17A /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4F0152A490AA300E6B17A /* WebService.swift */; };
+		09C4F0192A4F7AF600E6B17A /* ScanResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4F0182A4F7AF600E6B17A /* ScanResultViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +83,7 @@
 		098EDEE82A3D4CBD002BFE04 /* AboutViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewButton.swift; sourceTree = "<group>"; };
 		098EDEEA2A3D4CED002BFE04 /* LogoutButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutButtonView.swift; sourceTree = "<group>"; };
 		098EDEEC2A3D4D13002BFE04 /* DeleteAccountButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountButtonView.swift; sourceTree = "<group>"; };
+		09B602E12A4FCBB400FA5E0A /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		09C4EFF42A477F7400E6B17A /* AboutPrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPrivacyView.swift; sourceTree = "<group>"; };
 		09C4EFF72A478F2A00E6B17A /* RegisterEmailTextFielsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEmailTextFielsView.swift; sourceTree = "<group>"; };
 		09C4EFF92A478FD800E6B17A /* RegisterPasswordTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPasswordTextFieldView.swift; sourceTree = "<group>"; };
@@ -83,8 +91,14 @@
 		09C4EFFD2A47909000E6B17A /* RegisterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterButtonView.swift; sourceTree = "<group>"; };
 		09C4EFFF2A47918700E6B17A /* RegAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegAlerts.swift; sourceTree = "<group>"; };
 		09C4F0012A47B06A00E6B17A /* RegisterFullNameTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFullNameTextFieldView.swift; sourceTree = "<group>"; };
-		09C4F0032A47E42900E6B17A /* HomeModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModelView.swift; sourceTree = "<group>"; };
+		09C4F0032A47E42900E6B17A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		09C4F0052A47F87E00E6B17A /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		09C4F0072A48AAE200E6B17A /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		09C4F0092A48AAFA00E6B17A /* CameraViewBottomPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewBottomPanel.swift; sourceTree = "<group>"; };
+		09C4F00B2A48AB4A00E6B17A /* ScannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerVC.swift; sourceTree = "<group>"; };
+		09C4F0112A48FB2E00E6B17A /* ScanResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultView.swift; sourceTree = "<group>"; };
+		09C4F0152A490AA300E6B17A /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		09C4F0182A4F7AF600E6B17A /* ScanResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +174,7 @@
 				095016082A35A0AB008E046E /* Login */,
 				098EDED02A36AA65002BFE04 /* Register */,
 				09C4EFF62A477F7C00E6B17A /* About&Privacy */,
+				09C4F0172A490AB600E6B17A /* Services */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -184,6 +199,7 @@
 				098EDEC12A368F4E002BFE04 /* User.swift */,
 				09C4EFFF2A47918700E6B17A /* RegAlerts.swift */,
 				09C4F0052A47F87E00E6B17A /* Trip.swift */,
+				09B602E12A4FCBB400FA5E0A /* Vehicle.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -205,7 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				098EDED92A394163002BFE04 /* HomeView.swift */,
-				09C4F0032A47E42900E6B17A /* HomeModelView.swift */,
+				09C4F0032A47E42900E6B17A /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -214,6 +230,11 @@
 			isa = PBXGroup;
 			children = (
 				098EDEDB2A39417A002BFE04 /* ScanView.swift */,
+				09C4F0072A48AAE200E6B17A /* CameraView.swift */,
+				09C4F0092A48AAFA00E6B17A /* CameraViewBottomPanel.swift */,
+				09C4F00B2A48AB4A00E6B17A /* ScannerVC.swift */,
+				09C4F0112A48FB2E00E6B17A /* ScanResultView.swift */,
+				09C4F0182A4F7AF600E6B17A /* ScanResultViewModel.swift */,
 			);
 			path = Scan;
 			sourceTree = "<group>";
@@ -253,6 +274,14 @@
 				09C4EFF42A477F7400E6B17A /* AboutPrivacyView.swift */,
 			);
 			path = "About&Privacy";
+			sourceTree = "<group>";
+		};
+		09C4F0172A490AB600E6B17A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				09C4F0152A490AA300E6B17A /* WebService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,22 +366,27 @@
 				098EDECD2A36A959002BFE04 /* ForgotPasswordButtonView.swift in Sources */,
 				095016012A3596CE008E046E /* AppDelegate.swift in Sources */,
 				098EDECF2A36AA60002BFE04 /* RegisterView.swift in Sources */,
-				09C4F0042A47E42900E6B17A /* HomeModelView.swift in Sources */,
+				09C4F0042A47E42900E6B17A /* HomeViewModel.swift in Sources */,
 				098EDEE72A3D4BE5002BFE04 /* SettingView.swift in Sources */,
 				098EDEC02A368E64002BFE04 /* LogoView.swift in Sources */,
 				095015EE2A3587D8008E046E /* ContentView.swift in Sources */,
 				09C4F0022A47B06A00E6B17A /* RegisterFullNameTextFieldView.swift in Sources */,
 				09C4EFF82A478F2B00E6B17A /* RegisterEmailTextFielsView.swift in Sources */,
+				09B602E22A4FCBB400FA5E0A /* Vehicle.swift in Sources */,
 				098EDED42A393C10002BFE04 /* Utility.swift in Sources */,
 				098EDEED2A3D4D13002BFE04 /* DeleteAccountButtonView.swift in Sources */,
 				095015EC2A3587D8008E046E /* TripTrackApp.swift in Sources */,
+				09C4F0192A4F7AF600E6B17A /* ScanResultViewModel.swift in Sources */,
 				098EDEC92A36A639002BFE04 /* LoginButtonView.swift in Sources */,
 				09C4EFFE2A47909000E6B17A /* RegisterButtonView.swift in Sources */,
 				098EDECB2A36A701002BFE04 /* MainView.swift in Sources */,
 				098EDEE22A39A5C8002BFE04 /* TabView.swift in Sources */,
 				09C4EFFA2A478FD800E6B17A /* RegisterPasswordTextFieldView.swift in Sources */,
+				09C4F00A2A48AAFA00E6B17A /* CameraViewBottomPanel.swift in Sources */,
+				09C4F0122A48FB2E00E6B17A /* ScanResultView.swift in Sources */,
 				095016072A35A0A5008E046E /* LoginView.swift in Sources */,
 				09C4EFF52A477F7400E6B17A /* AboutPrivacyView.swift in Sources */,
+				09C4F00C2A48AB4A00E6B17A /* ScannerVC.swift in Sources */,
 				095016032A35999D008E046E /* Styles.swift in Sources */,
 				098EDEE52A3D4A2D002BFE04 /* SettingsButton.swift in Sources */,
 				098EDEE02A3941A0002BFE04 /* HistoryView.swift in Sources */,
@@ -360,8 +394,10 @@
 				098EDEC22A368F4E002BFE04 /* User.swift in Sources */,
 				098EDEDA2A394163002BFE04 /* HomeView.swift in Sources */,
 				09C4F0002A47918700E6B17A /* RegAlerts.swift in Sources */,
+				09C4F0162A490AA300E6B17A /* WebService.swift in Sources */,
 				098EDEC72A36A5B6002BFE04 /* PasswordTextFieldView.swift in Sources */,
 				09C4EFFC2A47902600E6B17A /* RegisterRePasswordTextFieldView.swift in Sources */,
+				09C4F0082A48AAE200E6B17A /* CameraView.swift in Sources */,
 				098EDEDC2A39417A002BFE04 /* ScanView.swift in Sources */,
 				098EDEE92A3D4CBD002BFE04 /* AboutViewButton.swift in Sources */,
 				098EDEEB2A3D4CED002BFE04 /* LogoutButtonView.swift in Sources */,
@@ -498,7 +534,11 @@
 				DEVELOPMENT_TEAM = D2C435SLPG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Tripushka;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
+				INFOPLIST_KEY_NSCameraUsageDescription = "The application needs to use device camera";
+				INFOPLIST_KEY_NSLocationUsageDescription = "The application needs to grab your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The application needs to grab your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -508,7 +548,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 3.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ca.vako.TripTrack;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.vako.Tripushka;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -532,7 +572,11 @@
 				DEVELOPMENT_TEAM = D2C435SLPG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Tripushka;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
+				INFOPLIST_KEY_NSCameraUsageDescription = "The application needs to use device camera";
+				INFOPLIST_KEY_NSLocationUsageDescription = "The application needs to grab your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The application needs to grab your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -542,7 +586,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 3.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ca.vako.TripTrack;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.vako.Tripushka;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

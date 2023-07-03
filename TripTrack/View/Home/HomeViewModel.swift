@@ -9,7 +9,7 @@ import Foundation
 import FirebaseAuth
 import FirebaseDatabase
 
-class HomeModelView: ObservableObject {
+class HomeViewModel: ObservableObject {
     
     var user = User()
     var ref: DatabaseReference = Database.database().reference()
@@ -22,6 +22,7 @@ class HomeModelView: ObservableObject {
     
     // MARK: - Greeting text
     
+    @discardableResult
     func greetingText(user: User) -> String{
         
         let hour = Calendar.current.component(.hour, from: Date())
@@ -42,12 +43,12 @@ class HomeModelView: ObservableObject {
             self.greetingText = "Good day"
         }
         
-        print(greetingText)
         return greetingText
     }
     
     // MARK: - Get user credentials
     
+    @discardableResult
     func getUserCredential() -> User {
         
         let userID = Auth.auth().currentUser?.uid
@@ -57,7 +58,8 @@ class HomeModelView: ObservableObject {
             self.user.fullName = value?["fullname"] as? String ?? ""
             user.email = value?["email"] as? String ?? ""
             
-            self.greetingText(user: self.user)
+            greetingText(user: self.user)
+            getLastTrip()
             
         }) { (error) in
             //            print(error.localizedDescription)
@@ -68,6 +70,7 @@ class HomeModelView: ObservableObject {
     
     // MARK: - Get Last Trip
     
+    @discardableResult
     func getLastTrip() -> String {
         
         let lastTrip = Trip()

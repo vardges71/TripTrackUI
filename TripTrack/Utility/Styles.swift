@@ -35,6 +35,16 @@ public extension View {
         
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
+    
+    func vehicleInfoSection(label: String, result: String) -> some View {
+        
+        VStack(alignment: .leading) {
+            Text(label)
+                .modifier(LabelTextModifier())
+            Text(result)
+                .textCase(.uppercase)
+        }
+    }
 }
 
 struct TextFieldModifier: ViewModifier {
@@ -55,10 +65,20 @@ struct TextFieldModifier: ViewModifier {
     }
 }
 
-struct ActionButtonModifier: ViewModifier {
-
+struct LabelTextModifier: ViewModifier {
+    
     func body(content: Content) -> some View {
+        
+        content
+            .foregroundColor(Color("projectLabel"))
+            .font(.system(size: 13))
+    }
+}
 
+struct ActionButtonModifier: ViewModifier {
+    
+    func body(content: Content) -> some View {
+        
         content
             .frame(width: UIScreen.main.bounds.width - 40, height: 44, alignment: .center)
             .font(.system(size: 17.0))

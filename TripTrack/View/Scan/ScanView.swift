@@ -5,22 +5,21 @@
 //  Created by Vardges Gasparyan on 2023-06-13.
 //
 
+import UIKit
 import SwiftUI
+import AVFoundation
 
-struct ScanView: View {
-    //    MARK: - PROPERTIES
-//    @Binding var tabSelection: Int
+struct ScanView: UIViewControllerRepresentable {
+
+        
+    func makeUIViewController(context: Context) -> ScannerVC {
+
+        let scanVC = ScannerVC()
+        
+        return scanVC
+    }
     
-    //    MARK: - BODY
-    var body: some View {
-        Text("Scan view")
+    func updateUIViewController(_ uiViewController: ScannerVC, context: Context) {
+        // Update the view controller here
     }
 }
-
-//  MARK: - PREVIEW
-
-//struct ScanView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ScanView()
-//    }
-//}

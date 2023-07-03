@@ -33,7 +33,7 @@ struct MainView: View {
                     }
                 case .scan:
                     NavigationView {
-                        ScanView()
+                        CameraView()
                     }
                 case .history:
                     NavigationView {
