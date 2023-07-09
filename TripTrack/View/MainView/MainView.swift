@@ -20,7 +20,6 @@ struct MainView: View {
     @State private var tabSelected: Tab = .home
     @State private var isSettingsVisible: Bool = false
     
-    
     //    MARK: - BODY
     var body: some View {
         
@@ -37,7 +36,7 @@ struct MainView: View {
                     }
                 case .history:
                     NavigationView {
-                        HistoryView()
+                        HistoryView(tabSelected: $tabSelected)
                     }
                 }
                 TabView(tabSelected: $tabSelected, isSettingsVisible: $isSettingsVisible)

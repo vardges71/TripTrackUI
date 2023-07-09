@@ -42,7 +42,20 @@ public extension View {
             Text(label)
                 .modifier(LabelTextModifier())
             Text(result)
+                .foregroundColor(.accentColor)
                 .textCase(.uppercase)
+        }
+    }
+    
+    func tripInfoSection(label: String, result: String) -> some View {
+        
+        VStack(alignment: .leading) {
+            Text(label)
+                .modifier(LabelTextModifier())
+            Text(result)
+                .foregroundColor(.accentColor)
+//                .textCase(.lowercase)
+                .font(.system(size: 15))
         }
     }
 }

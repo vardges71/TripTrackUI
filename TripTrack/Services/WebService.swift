@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class WebService {
+class WebService {
     
     let vinCode = UserDefaults.standard.string(forKey: "vinCode") ?? ""
     

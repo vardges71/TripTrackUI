@@ -31,7 +31,7 @@ struct LogoutButtonView: View {
                             .frame(width: 20, height: 20)
                         Text("log out")
                             .font(.caption2)
-                    } .foregroundColor(.accentColor)
+                    } .foregroundColor(Color("projectNav"))
                 }
                 .alert("Do you really want to sign out?", isPresented: $showingAlert) {
                     

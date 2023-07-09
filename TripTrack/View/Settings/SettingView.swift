@@ -16,18 +16,25 @@ struct SettingView: View {
     var body: some View {
         
         HStack(alignment: .bottom) {
-            
-            Spacer()
-            AboutViewButton()
-            Spacer()
-            LogoutButtonView()
-            Spacer()
-            DeleteAccountButtonView()
-            Spacer()
-            
-        }
-        .opacity(isSettingsVisible ? 1 : 0)
-        .transition(.scale)
+            RoundedRectangle(cornerRadius: 20)
+                .fill(Color.accentColor)
+                .frame(maxWidth: .infinity, maxHeight: 60)
+                .padding()
+                .overlay {
+                    HStack {
+                        
+                        Spacer()
+                        AboutViewButton()
+                        Spacer()
+                        LogoutButtonView()
+                        Spacer()
+                        DeleteAccountButtonView()
+                        Spacer()
+                        
+                    }
+                }
+        }.opacity(isSettingsVisible ? 1 : 0)
+                .transition(.scale)
     }
 }
 

@@ -19,7 +19,7 @@ struct CameraView: View {
             VStack {
                 CameraViewBottomPanel(showScanResult: $showScanResult)
                 ScanView()
-                    .offset(y: 10)
+                    .ignoresSafeArea(.all)
                 
             } .fullScreenCover(isPresented: $showScanResult) { ScanResultView() }
         }

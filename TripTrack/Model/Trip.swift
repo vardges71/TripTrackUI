@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Trip: ObservableObject {
+class Trip: ObservableObject, Identifiable {
     
     @Published var tripId: String = ""
     @Published var vehicleVIN: String = ""

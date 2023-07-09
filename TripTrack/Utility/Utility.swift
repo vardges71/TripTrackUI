@@ -66,4 +66,80 @@ class Utilities {
             }
         }
     }
+    
+    // MARK: - Get Current Date&Time
+    
+    static func getCurrentDateTime () -> String {
+        
+        let date = NSDate()
+        let dateFormatter = DateFormatter()
+        let timeFormatter = DateFormatter()
+        dateFormatter.dateFormat = "d MMMM, yyyy, HH:mm"
+        timeFormatter.timeStyle = .medium
+        
+        let currDateTime = (dateFormatter.string(from: date as Date) + "\n" + timeFormatter.string(from: date as Date))
+        
+        return currDateTime
+    }
+    
+    static func curDateTimeForDB() -> String {
+        
+        let date = NSDate()
+        let dateFormatter = DateFormatter()
+        //        let timeFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM. yyyy, HH:mm"
+        //        timeFormatter.timeStyle = .short
+        
+        let currDateTime = (dateFormatter.string(from: date as Date))
+        
+        return currDateTime
+    }
+    
+    // MARK: - Create Ttrip ID
+    
+    static func tripId() -> String {
+        
+        let date = NSDate()
+        let dateFormatter = DateFormatter()
+        //        let timeFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMddHHmmss"
+        //        timeFormatter.timeStyle = .short
+        
+        let currDateTime = (dateFormatter.string(from: date as Date))
+        
+        return currDateTime
+    }
+    
+    // MARK: - Get Last Trip ID
+    
+    static func getLastTripID() {
+        
+        var ref: DatabaseReference!
+        let lastTripID = Trip()
+        let userID = Auth.auth().currentUser?.uid
+        ref = Database.database().reference().child("users").child(userID!).child("trips")
+        
+        ref.queryLimited(toLast: 1).observeSingleEvent(of: .childAdded, with: { (snapshot) in
+            
+            let value = snapshot.value as? NSDictionary
+            lastTripID.tripId = value?["tripID"] as? String ?? ""
+            
+            UserDefaults.standard.set(lastTripID.tripId, forKey: "lastTripID")
+        })  { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
+    // MARK: - Get Monday in trip history
+    
+    static func initNewWeek() -> String {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        let weekDay = dateFormatter.string(from: Date())
+        
+        print(weekDay)
+        
+        return weekDay
+    }
 }

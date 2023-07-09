@@ -32,7 +32,7 @@ struct DeleteAccountButtonView: View {
                             .frame(width: 20, height: 20)
                         Text("delete account")
                             .font(.caption2)
-                    } .foregroundColor(.accentColor)
+                    } .foregroundColor(Color("projectNav"))
                 }
                 .actionSheet(isPresented: $showingAlert) {
                     ActionSheet(

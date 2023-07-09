@@ -9,23 +9,29 @@ import SwiftUI
 
 struct HistoryView: View {
     //    MARK: - PROPERTIES
+    
+    @StateObject var historyVM = HistoryViewModel()
+    @Binding var tabSelected: Tab
+    
     let title = "History"
     let backImage = "back"
     
     //    MARK: - BODY
     var body: some View {
         
-        NavigationView {
-            ZStack {
-                fullBackground(imageName: backImage)
-                VStack {
-                    Text("History view")
-                        .foregroundColor(.accentColor)
+        NavigationStack {
+            
+                ZStack {
+                    fullBackground(imageName: backImage)
+                    Section {
+                        VStack(alignment: .leading) {
+                            HistoryListView(tabSelected: $tabSelected, historyVM: historyVM)
+                        }
+                    }
                 }
-            }
+                .navigationTitle(title)
+                .navigationBarTitleTextColor(Color("projectLabel"))
         }
-        .navigationTitle(title)
-        .navigationBarTitleTextColor(Color(.lightGray))
     }
 }
 
@@ -33,6 +39,6 @@ struct HistoryView: View {
 
 struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryView()
+        HistoryView(historyVM: HistoryViewModel(), tabSelected: .constant(.history))
     }
 }

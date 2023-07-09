@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import Firebase
-import FirebaseAuth
 
 @main
 struct TripTrackApp: App {
@@ -19,11 +17,7 @@ struct TripTrackApp: App {
         WindowGroup {
             Group {
                 
-                if Auth.auth().currentUser != nil {
-                    MainView()
-                } else {
-                    ContentView()
-                }
+                ContentView()
             } .preferredColorScheme(.dark)
         }
     }

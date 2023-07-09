@@ -30,7 +30,7 @@ struct AboutViewButton: View {
                             .frame(width: 20, height: 20)
                         Text("about&privacy")
                             .font(.caption2)
-                    } .foregroundColor(.accentColor)
+                    } .foregroundColor(Color("projectNav"))
                 }
                 .sheet(isPresented: $showPrivacyPolicy) {
                     AboutPrivacyView()

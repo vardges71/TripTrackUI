@@ -20,6 +20,7 @@ struct HomeView: View {
     
     //    MARK: - BODY
     var body: some View {
+        
         NavigationView {
             ZStack {
                 fullBackground(imageName: backImage)

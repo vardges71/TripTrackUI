@@ -65,7 +65,7 @@ struct CameraViewBottomPanel: View {
             }
         }
         .padding(.horizontal, 40)
-        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.07)
+        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.06)
         .background(Color("projectNav"))
     }
     

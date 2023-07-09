@@ -6,16 +6,33 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseAuth
 
 struct ContentView: View {
     
 //    MARK: - PROPERTIES
     
+    @StateObject var scanResultVM = ScanResultViewModel()
     
 //    MARK: - BODY
     var body: some View {
         
-        LoginView()
+        VStack {
+            if Auth.auth().currentUser != nil {
+                
+                if scanResultVM.isStartLocationSetted == false {
+                    MainView()
+                } else {
+                    ScanResultView()
+                }
+                
+            } else {
+                LoginView()
+            }
+        } .onAppear {
+            scanResultVM.validateDestinationPoint()
+        }
     }
 }
 
