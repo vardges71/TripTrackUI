@@ -15,12 +15,38 @@ struct SingleTripView: View {
     let title = "Single Trip"
     let backImage = "back"
     
+    @State private var showMessage = false
+    
 //    MARK: - BODY
     var body: some View {
         ZStack {
             fullBackground(imageName: backImage)
             VStack {
-                Text(trip.vehicleMake)
+                Spacer()
+                Text(trip.vehicleVIN)
+                    .onLongPressGesture(perform: {
+                        UIPasteboard.general.string = trip.vehicleVIN
+                        withAnimation(.easeInOut(duration: 0.5)) {
+                            showMessage = true
+                            }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            withAnimation(.easeInOut(duration: 1.0)) {
+                                showMessage = false
+                            }
+                        }
+                    })
+                Spacer()
+                if showMessage {
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(Color("messageBack"))
+                        .scaleEffect(showMessage ? 1.0 : 0.0)
+                        .frame(maxWidth: .infinity, maxHeight: 60)
+                        .padding()
+                        .overlay {
+                            Text("copied")
+                                .foregroundColor(.gray)
+                        }
+                }
             }
         }
     }

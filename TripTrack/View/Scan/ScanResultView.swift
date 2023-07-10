@@ -86,14 +86,16 @@ struct ScanResultView: View {
                             } .overlay(
                                 RoundedRectangle(cornerRadius: 35.0).stroke(lineWidth: 2)
                             )
-                            
                         }
                         Spacer()
-                        Button("rescan") {
-                            isResScan.toggle()
-                            UserDefaults.standard.removeObject(forKey: "vinCode")
-                        } .fullScreenCover(isPresented: $isResScan) { MainView() }
-                        
+                        if scanResultVM.isStartLocationSetted == true {
+                            
+                        } else {
+                            Button("rescan") {
+                                isResScan.toggle()
+                                UserDefaults.standard.removeObject(forKey: "vinCode")
+                            } .fullScreenCover(isPresented: $isResScan) { MainView() }
+                        }
                     }
                     .fullScreenCover(isPresented: $showMainView, content: {
                         MainView()

@@ -11,6 +11,8 @@ class WebService {
     
     let vinCode = UserDefaults.standard.string(forKey: "vinCode") ?? ""
     
+    var veh = Vehicle()
+    
 //    MARK: - Parse JSON
     
     func parseJSON(scanResVM: ScanResultViewModel) {

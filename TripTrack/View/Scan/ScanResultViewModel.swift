@@ -70,7 +70,7 @@ class ScanResultViewModel: ObservableObject {
         
         locMan.startUpdatingLocation()
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
             
 //            print("Start button tapped, \(self.locMan.myCity), \(self.locMan.myState)")
             
@@ -142,7 +142,7 @@ class ScanResultViewModel: ObservableObject {
         
         locMan.startUpdatingLocation()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
             
 //            print("Finish button tapped, \(self.locMan.myState). \(self.locMan.myCountry)")
             
@@ -179,6 +179,7 @@ class ScanResultViewModel: ObservableObject {
                     print("ERRRRRRRRROOOOOOORRRRRR !!!!! \(String(describing: error))")
                 }
             })
+            self.locMan.stopUpdatingLocation()
         })
     }
     

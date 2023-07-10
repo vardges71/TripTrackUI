@@ -66,6 +66,6 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
                 
         }
         
-        locationManager.stopUpdatingLocation()
+//        locationManager.stopUpdatingLocation()
     }
 }
