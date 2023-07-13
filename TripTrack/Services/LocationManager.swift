@@ -25,11 +25,13 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
         super.init()
         
         locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
         
         locationManager.distanceFilter = 10
         locationManager.allowsBackgroundLocationUpdates = false
         locationManager.desiredAccuracy = 10
+        locationManager.activityType = CLActivityType.automotiveNavigation
     }
     
     func startUpdatingLocation() {
@@ -45,10 +47,6 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
     
     // CLLocationManagerDelegate method
     
-//    func fetchCityAndCountry(from location: CLLocation, completion: @escaping (_ city: String?, _ country:  String?, _ error: Error?) -> ()) {
-//
-//        geocoder.reverseGeocodeLocation(location) { placemarks, error in completion(placemarks?.first?.locality, placemarks?.first?.country, error) }
-//    }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
