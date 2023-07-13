@@ -29,6 +29,7 @@ class ScanResultViewModel: ObservableObject {
     
     @Published var dateResult: String = ""
     @Published var isStartLocationSetted: Bool = false
+    @Published var showMainView: Bool = false
     
     var identifier = UUID()
     var trip: Trip = Trip()
@@ -93,7 +94,7 @@ class ScanResultViewModel: ObservableObject {
                 let vin = self.vinRes
                 let make = self.makeRes
                 let model = self.modelRes
-                let startLocation = String(self.locMan.myCity + ", " + self.locMan.myCountry)
+                let startLocation = String(self.locMan.myCity + ", " + self.locMan.myState + ". " + self.locMan.myCountry)
                 //            let startLocation = String(loc.curCity + ", " + loc.curCountry)
                 let startDate = Utilities.curDateTimeForDB()
                 let userID = Auth.auth().currentUser?.uid
@@ -149,7 +150,7 @@ class ScanResultViewModel: ObservableObject {
             let error = self.validateData(vehicle: self.vehicle)
             
             let trId = UserDefaults.standard.string(forKey: "lastTripID")
-            let finishLocation = String(self.locMan.myCity + ", " + self.locMan.myCountry)
+            let finishLocation = String(self.locMan.myCity + ", " + self.locMan.myState + ". " + self.locMan.myCountry)
             let finishDate = Utilities.curDateTimeForDB()
             let userID = Auth.auth().currentUser?.uid
             
@@ -179,7 +180,8 @@ class ScanResultViewModel: ObservableObject {
                     print("ERRRRRRRRROOOOOOORRRRRR !!!!! \(String(describing: error))")
                 }
             })
-            self.locMan.stopUpdatingLocation()
+//            self.locMan.stopUpdatingLocation()
+            self.showMainView.toggle()
         })
     }
     

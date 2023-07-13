@@ -11,6 +11,7 @@ struct AboutPrivacyView: View {
 //    MARK: - PROPERTIES
     
     var backImageName = "back"
+    let title = "About&Privacy"
     
     let appVersionString: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
     let buildNumber: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
@@ -18,15 +19,25 @@ struct AboutPrivacyView: View {
 //    MARK: - BODY
     var body: some View {
         
-        ZStack {
-            fullBackground(imageName: backImageName)
-            
-            VStack(alignment: .leading) {
-                Text("TripTrack")
-                Text("Version \(appVersionString) (#\(buildNumber))")
-                    .font(.footnote)
+        NavigationStack {
+            ZStack {
+                fullBackground(imageName: backImageName)
+                
+                VStack(alignment: .leading) {
+                    Text("TripTrack")
+                        .font(.title2)
+                    Text("Version \(appVersionString) (#\(buildNumber))")
+                        .font(.footnote)
+                    Text("©2023 Vardges Gasparyan. All Rights Reserved")
+                    Divider()
+                    PrivacyView()
+                }
+                .foregroundColor(.accentColor)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(20)
             }
-            .foregroundColor(.accentColor)
+            .navigationTitle(title)
+            .navigationBarTitleTextColor(Color("projectLabel"))
         }
     }
 }

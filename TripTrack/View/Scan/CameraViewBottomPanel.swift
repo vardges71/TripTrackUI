@@ -26,7 +26,6 @@ struct CameraViewBottomPanel: View {
             
             Button {
                 isManualInputActive.toggle()
-//                UserDefaults.standard.removeObject(forKey: "vinCode")
             } label: {
                 VStack {
                     Image(systemName: "square.and.pencil")
@@ -37,15 +36,15 @@ struct CameraViewBottomPanel: View {
             }
             .alert("VIN CODE", isPresented: $isManualInputActive) {
                 TextField("vin code:", text: $enteredVin)
+                    .modifier(TextFieldModifier())
                     .textInputAutocapitalization(.never)
-//                    .foregroundColor(Color("projectNav"))
                 Button("Submit", role: .destructive) {
                     
                     veh.vin = enteredVin
                     UserDefaults.standard.set(veh.vin, forKey: "vinCode")
                     showScanResult = true
                     
-                    print("VIN IS: \(veh.vin)")
+//                    print("VIN IS: \(veh.vin)")
                 }
                 Button("Cancel", role: .cancel) { }
             } message: {

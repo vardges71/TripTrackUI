@@ -20,6 +20,8 @@ struct HistoryListView: View {
     @State private var showAlert = false
     @State private var showTrashAlert = false
     
+    @State private var delTripID: String = ""
+    
     @Binding var tabSelected: Tab
     
     @StateObject var historyVM: HistoryViewModel
@@ -46,32 +48,31 @@ struct HistoryListView: View {
                         .padding(.top, 50)
                 }
             } else {
-                List {
-                    ForEach(historyVM.tripsArray) { trip in
-                        ZStack(alignment: .leading) {
-                            HistoryCellView(trip: trip)
-                                .onTapGesture { selection = trip }
-                                .swipeActions(allowsFullSwipe: false) {
-                                    
-                                    Button {
-                                        showTrashAlert.toggle()
-                                    } label: {
-                                        Label("Delete", systemImage: "trash")
-                                    }
-                                    .tint(Color("projectRed"))
+                
+                List(historyVM.tripsArray) { trip in
+                    ZStack(alignment: .leading) {
+                        HistoryCellView(trip: trip)
+                            .swipeActions(allowsFullSwipe: false) {
+                                
+                                Button {
+                                    showTrashAlert.toggle()
+                                    delTripID = trip.tripId
+                                } label: {
+                                    Label("Delete", systemImage: "trash")
                                 }
-                                .confirmationDialog("Are you sure?", isPresented: $showTrashAlert, actions: {
-                                    
-                                    Button("Delete", role: .destructive) {
-                                        deleteRow(trip)
-                                    }
-                                    Button("Cancel", role: .cancel) { }
-
-                                }, message: {
-                                    Text("Do you really want to delete current trip?")
-                                })
-                        }
-                        
+                                .tint(Color("projectRed"))
+                            }
+                            .onTapGesture { selection = trip }
+                            .confirmationDialog("Are you sure?", isPresented: $showTrashAlert, actions: {
+                                
+                                Button("Delete", role: .destructive) {
+                                    deleteRow(tripID: delTripID)
+                                }
+                                Button("Cancel", role: .cancel) { }
+                                
+                            }, message: {
+                                Text("Do you really want to delete current trip?")
+                            })
                     }
                     .listRowBackground(Color.clear)
                     .animation(.default, value: true)
@@ -92,12 +93,12 @@ struct HistoryListView: View {
                                 , alignment: .topTrailing
                             )
                     }
-                } .scrollContentBackground(.hidden)
+                }.scrollContentBackground(.hidden)
                     .background(Color.clear)
             }
         }
         .onAppear { historyVM.loadHistory() }
-        .alert(LocalizedStringKey(stringLiteral: "NO HISTORY!!!"), isPresented: $showAlert) {
+        .alert(LocalizedStringKey(stringLiteral: "NO HISTORY!!!"), isPresented: $historyVM.isHistoryEmpty) {
             Button("OK") {
                 tabSelected = .home
             }
@@ -106,19 +107,20 @@ struct HistoryListView: View {
         }
     }
     
-    func deleteRow(_ trip: Trip) {
-        
+    func deleteRow(tripID: String) {
+    
         var ref: DatabaseReference!
         let userID = Auth.auth().currentUser?.uid
         
-        let currentTrip = trip
-        let tripID = currentTrip.tripId
         ref = Database.database().reference()
         
-        withAnimation {
-            ref.child("users").child(userID!).child("trips").child(tripID).removeValue()
+        ref.child("users").child(userID!).child("trips").child(tripID).removeValue { error, _ in
+            print(error?.localizedDescription as Any)
         }
-        historyVM.loadHistory()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            historyVM.loadHistory()
+        }
     }
 }
 //  MARK: - PREVIEW

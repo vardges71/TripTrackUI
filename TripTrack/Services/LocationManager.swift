@@ -19,6 +19,8 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
     @Published var myCity: String = ""
     @Published var myCountry: String = ""
     
+    @Published var fullAddress: String = ""
+    
     override init() {
         super.init()
         
@@ -43,10 +45,10 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
     
     // CLLocationManagerDelegate method
     
-    func fetchCityAndCountry(from location: CLLocation, completion: @escaping (_ city: String?, _ country:  String?, _ error: Error?) -> ()) {
-        
-        geocoder.reverseGeocodeLocation(location) { placemarks, error in completion(placemarks?.first?.locality, placemarks?.first?.country, error) }
-    }
+//    func fetchCityAndCountry(from location: CLLocation, completion: @escaping (_ city: String?, _ country:  String?, _ error: Error?) -> ()) {
+//
+//        geocoder.reverseGeocodeLocation(location) { placemarks, error in completion(placemarks?.first?.locality, placemarks?.first?.country, error) }
+//    }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
@@ -58,14 +60,17 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
             self?.myState = (placemarks?.first?.administrativeArea)!
             self?.myCountry = (placemarks?.first?.country)!
             
+            self?.fullAddress = "\((placemarks?.first?.subThoroughfare)!) \((placemarks?.first?.thoroughfare)!),\n\((placemarks?.first?.locality)!), \((placemarks?.first?.postalCode)!), \((placemarks?.first?.administrativeArea)!),\n\((placemarks?.first?.country)!)"
+            
             self!.loc.curCity = self!.myCity
             self!.loc.curState = self!.myState
             self!.loc.curCountry = self!.myCountry
             
 //            print("FROM LOCATION: \(self!.loc.curCity), \(self!.loc.curState). \(self!.loc.curCountry)")
+//            print("FROM LOCATION: \(self!.fullAddress)")
                 
         }
         
-//        locationManager.stopUpdatingLocation()
+        locationManager.stopUpdatingLocation()
     }
 }

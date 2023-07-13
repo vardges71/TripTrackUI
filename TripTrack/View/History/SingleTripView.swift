@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SingleTripView: View {
-//    MARK: - PROPERTIES
+    //    MARK: - PROPERTIES
     
     let trip: Trip
     
@@ -17,24 +17,55 @@ struct SingleTripView: View {
     
     @State private var showMessage = false
     
-//    MARK: - BODY
+    //    MARK: - BODY
     var body: some View {
+        
         ZStack {
             fullBackground(imageName: backImage)
             VStack {
                 Spacer()
-                Text(trip.vehicleVIN)
-                    .onLongPressGesture(perform: {
-                        UIPasteboard.general.string = trip.vehicleVIN
-                        withAnimation(.easeInOut(duration: 0.5)) {
-                            showMessage = true
-                            }
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                            withAnimation(.easeInOut(duration: 1.0)) {
-                                showMessage = false
-                            }
+                HStack {
+                    VStack(alignment: .leading) {
+                        
+                        Section {
+                            Text("TRIP INFO:")
+                                .font(.title2)
+                            
+                            tripInfoSection(label: "start date:", result: trip.startDate)
+                            tripInfoSection(label: "start location:", result: trip.startLocation)
+                            tripInfoSection(label: "finish date:", result: trip.endDate)
+                            tripInfoSection(label: "finish location:", result: trip.endLocation)
                         }
-                    })
+                        
+                        Spacer()
+                        Section {
+                            Text("VEHICLE INFO:")
+                                .font(.title2)
+                            vehicleInfoSection(label: "vin code", result: trip.vehicleVIN)
+                                .onLongPressGesture(perform: {
+                                    UIPasteboard.general.string = trip.vehicleVIN
+                                    withAnimation(.easeInOut(duration: 0.5)) {
+                                        showMessage = true
+                                    }
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                        withAnimation(.easeInOut(duration: 1.0)) {
+                                            showMessage = false
+                                        }
+                                    }
+                                })
+                            vehicleInfoSection(label: "make:", result: trip.vehicleMake)
+                            vehicleInfoSection(label: "model:", result: trip.vehicleModel)
+                            
+                        }
+                        Spacer()
+                        Text(countTripDuration())
+                    }
+                    .foregroundColor(.accentColor)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(20)
+                }
+                .padding(.top, 60)
+                .padding(.bottom, 60)
                 Spacer()
                 if showMessage {
                     RoundedRectangle(cornerRadius: 20)
@@ -49,6 +80,21 @@ struct SingleTripView: View {
                 }
             }
         }
+    }
+    func countTripDuration() -> String {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM. yyyy, HH:mm"
+        let startDate = dateFormatter.date(from: trip.startDate)! as Date
+        let endDate = dateFormatter.date(from: trip.endDate)! as Date
+        let diffComponents = Calendar.current.dateComponents([.minute], from: startDate, to: endDate)
+        
+        let minutes = (diffComponents.minute! * 2) + 60
+        
+        let tripDurationHours = (minutes / 60)
+        let tripDurationMinutes = (minutes % 60)
+        
+        return "DURATION: \(tripDurationHours) h. \(tripDurationMinutes) min."
     }
 }
 //  MARK: - PREVIEW

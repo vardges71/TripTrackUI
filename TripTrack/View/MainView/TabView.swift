@@ -20,6 +20,7 @@ struct TabView: View {
             Spacer()
             Button {
                 tabSelected = .home
+                isSettingsVisible = false
             } label: {
                 VStack {
                     Image(systemName: tabSelected == .home ? "house.fill" : "house")
@@ -34,6 +35,7 @@ struct TabView: View {
             Spacer()
             Button {
                 tabSelected = .scan
+                isSettingsVisible = false
             } label: {
                 VStack {
                     Image(systemName: tabSelected == .scan ? "camera.fill" : "camera")
@@ -48,6 +50,7 @@ struct TabView: View {
             Spacer()
             Button {
                 tabSelected = .history
+                isSettingsVisible = false
             } label: {
                 VStack {
                     Image(systemName: tabSelected == .history ? "doc.plaintext.fill" : "doc.plaintext")
@@ -63,7 +66,7 @@ struct TabView: View {
             
             SettingsButton(isSettingsVisible: $isSettingsVisible)
                 .onTapGesture {
-                    withAnimation {
+                    withAnimation(.easeInOut(duration: 0.5)) {
                         isSettingsVisible.toggle()
                     }
                 }

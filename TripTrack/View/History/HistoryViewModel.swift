@@ -41,7 +41,7 @@ extension HistoryViewModel: UploadHistoryDelegate {
         
         if tripsArray.isEmpty {
             
-            isHistoryEmpty.toggle()
+            isHistoryEmpty = true
             shouldAnimate.toggle()
         }
 //        print("HVM trip array count \(self.tripsArray.count)")

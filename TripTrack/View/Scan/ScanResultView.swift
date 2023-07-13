@@ -14,8 +14,8 @@ struct ScanResultView: View {
     let title = "ScanResult"
     let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
     
-    @ObservedObject var scanResultVM = ScanResultViewModel()
-    @ObservedObject var locMan = LocationManager()
+    @StateObject var scanResultVM = ScanResultViewModel()
+    @StateObject var locMan = LocationManager()
     
     @State private var isResScan = false
     @State private var showMainView = false
@@ -70,7 +70,6 @@ struct ScanResultView: View {
                             
                             Button(action: {
                                 
-                                showMainView.toggle()
                                 scanResultVM.isStartLocationSetted.toggle()
                                 scanResultVM.finishPointButtonTapped()
                                 
@@ -97,7 +96,7 @@ struct ScanResultView: View {
                             } .fullScreenCover(isPresented: $isResScan) { MainView() }
                         }
                     }
-                    .fullScreenCover(isPresented: $showMainView, content: {
+                    .fullScreenCover(isPresented: $scanResultVM.showMainView, content: {
                         MainView()
                     })
                 }

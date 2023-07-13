@@ -18,7 +18,8 @@ struct TripTrackApp: App {
             Group {
                 
                 ContentView()
-            } .preferredColorScheme(.dark)
+            }
+            .preferredColorScheme(.dark)
         }
     }
 }

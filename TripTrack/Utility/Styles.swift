@@ -43,7 +43,6 @@ public extension View {
                 .modifier(LabelTextModifier())
             Text(result)
                 .foregroundColor(.accentColor)
-                .textCase(.uppercase)
         }
     }
     
