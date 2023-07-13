@@ -24,6 +24,7 @@ struct AboutPrivacyView: View {
                 fullBackground(imageName: backImageName)
                 
                 VStack(alignment: .leading) {
+                    Divider()
                     Text("TripTrack")
                         .font(.title2)
                     Text("Version \(appVersionString) (#\(buildNumber))")

@@ -27,6 +27,7 @@ struct ScanResultView: View {
             ZStack {
                 fullBackground(imageName: backImage)
                 VStack {
+                    Divider()
                     VStack(alignment: .leading, spacing: 10) {
                         
                         vehicleInfoSection(label: "make:", result: scanResultVM.makeRes)

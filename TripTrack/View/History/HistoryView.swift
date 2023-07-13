@@ -25,6 +25,7 @@ struct HistoryView: View {
                     fullBackground(imageName: backImage)
                     Section {
                         VStack(alignment: .leading) {
+                            Divider()
                             HistoryListView(tabSelected: $tabSelected, historyVM: historyVM)
                         }
                     }

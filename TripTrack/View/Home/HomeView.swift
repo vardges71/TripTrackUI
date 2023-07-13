@@ -21,10 +21,11 @@ struct HomeView: View {
     //    MARK: - BODY
     var body: some View {
         
-        NavigationView {
+        NavigationStack {
             ZStack {
                 fullBackground(imageName: backImage)
                 VStack {
+                    
                     Text(homeMV.greetingText)
                         .font(.callout)
                         .multilineTextAlignment(.center)
@@ -63,9 +64,9 @@ struct HomeView: View {
                     homeMV.getUserCredential()
                 }
             }
+            .navigationTitle(title)
+            .navigationBarTitleTextColor(Color("projectLabel"))
         }
-        .navigationTitle(title)
-        .navigationBarTitleTextColor(Color("projectLabel"))
     }
 }
 

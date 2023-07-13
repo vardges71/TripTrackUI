@@ -74,10 +74,10 @@ class Utilities {
         let date = NSDate()
         let dateFormatter = DateFormatter()
         let timeFormatter = DateFormatter()
-        dateFormatter.dateFormat = "d MMMM, yyyy, HH:mm"
+        dateFormatter.dateFormat = "d MMMM yyyy, HH:mm"
         timeFormatter.timeStyle = .medium
         
-        let currDateTime = (dateFormatter.string(from: date as Date) + "\n" + timeFormatter.string(from: date as Date))
+        let currDateTime = (dateFormatter.string(from: date as Date))
         
         return currDateTime
     }
