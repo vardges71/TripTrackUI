@@ -28,10 +28,11 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
         locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
         
-        locationManager.distanceFilter = 10
+        locationManager.distanceFilter = kCLLocationAccuracyBest
         locationManager.allowsBackgroundLocationUpdates = false
-        locationManager.desiredAccuracy = 10
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.activityType = CLActivityType.automotiveNavigation
+        
     }
     
     func startUpdatingLocation() {
@@ -58,14 +59,14 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
             self?.myState = (placemarks?.first?.administrativeArea)!
             self?.myCountry = (placemarks?.first?.country)!
             
-            self?.fullAddress = "\((placemarks?.first?.subThoroughfare)!) \((placemarks?.first?.thoroughfare)!),\n\((placemarks?.first?.locality)!), \((placemarks?.first?.postalCode)!), \((placemarks?.first?.administrativeArea)!),\n\((placemarks?.first?.country)!)"
+            self?.fullAddress = "\((placemarks?.first?.subThoroughfare)!) \((placemarks?.first?.thoroughfare)!),\n\((placemarks?.first?.locality)!), \((placemarks?.first?.administrativeArea)!),\n\((placemarks?.first?.postalCode)!), \((placemarks?.first?.country)!)"
             
             self!.loc.curCity = self!.myCity
             self!.loc.curState = self!.myState
             self!.loc.curCountry = self!.myCountry
             
 //            print("FROM LOCATION: \(self!.loc.curCity), \(self!.loc.curState). \(self!.loc.curCountry)")
-//            print("FROM LOCATION: \(self!.fullAddress)")
+            print("FROM LOCATION: \(self!.fullAddress)")
                 
         }
         

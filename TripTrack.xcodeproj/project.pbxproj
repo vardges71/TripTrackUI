@@ -106,6 +106,7 @@
 		09B602FB2A5A054000FA5E0A /* SingleTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTripView.swift; sourceTree = "<group>"; };
 		09B602FD2A5E65DF00FA5E0A /* PrivacyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewModel.swift; sourceTree = "<group>"; };
 		09B602FF2A5E661100FA5E0A /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
+		09B603012A63AB4200FA5E0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		09C4EFF42A477F7400E6B17A /* AboutPrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPrivacyView.swift; sourceTree = "<group>"; };
 		09C4EFF72A478F2A00E6B17A /* RegisterEmailTextFielsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEmailTextFielsView.swift; sourceTree = "<group>"; };
 		09C4EFF92A478FD800E6B17A /* RegisterPasswordTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPasswordTextFieldView.swift; sourceTree = "<group>"; };
@@ -155,6 +156,7 @@
 		095015EA2A3587D8008E046E /* TripTrack */ = {
 			isa = PBXGroup;
 			children = (
+				09B603012A63AB4200FA5E0A /* Info.plist */,
 				095016002A3596CE008E046E /* AppDelegate.swift */,
 				095015EB2A3587D8008E046E /* TripTrackApp.swift */,
 				095016042A3599C7008E046E /* Utility */,
@@ -580,9 +582,11 @@
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = D2C435SLPG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TripTrack/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TripTrack;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_NSCameraUsageDescription = "The application needs to use device camera";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "The application needs to grab your location";
 				INFOPLIST_KEY_NSLocationUsageDescription = "The application needs to grab your location";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The application needs to grab your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -623,9 +627,11 @@
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = D2C435SLPG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TripTrack/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TripTrack;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_NSCameraUsageDescription = "The application needs to use device camera";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "The application needs to grab your location";
 				INFOPLIST_KEY_NSLocationUsageDescription = "The application needs to grab your location";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The application needs to grab your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
