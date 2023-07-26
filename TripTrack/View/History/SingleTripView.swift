@@ -14,8 +14,10 @@ struct SingleTripView: View {
     
     let title = "Single Trip"
     let backImage = "back"
+    let durWidth = UIScreen.main.bounds.width * 0.5
     
-    @State private var showMessage = false
+    @State private var showMessage: Bool = false
+    @State private var roundTrip: Bool = false
     
     //    MARK: - BODY
     var body: some View {
@@ -58,7 +60,18 @@ struct SingleTripView: View {
                             
                         }
                         Spacer()
-                        Text(countTripDuration())
+                        HStack {
+                            Text(countTripDuration())
+                                .frame(width: durWidth, alignment: .leading)
+                                .font(.callout)
+                            
+                            Toggle(isOn: $roundTrip) {
+                                Text("round trip:")
+                                    .frame(maxWidth: .infinity, alignment: .trailing)
+                                    .font(.callout)
+                            }
+                            .toggleStyle(SwitchToggleStyle(tint: .accentColor))
+                        }
                     }
                     .foregroundColor(.accentColor)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -89,7 +102,14 @@ struct SingleTripView: View {
         let endDate = dateFormatter.date(from: trip.endDate)! as Date
         let diffComponents = Calendar.current.dateComponents([.minute], from: startDate, to: endDate)
         
-        let minutes = (diffComponents.minute! * 2) + 60
+//        let minutes = (diffComponents.minute! * 2) + 60
+        var minutes = 0
+        
+        if roundTrip == true {
+            minutes = (diffComponents.minute! * 2) + 60
+        } else {
+            minutes = diffComponents.minute!
+        }
         
         let tripDurationHours = (minutes / 60)
         let tripDurationMinutes = (minutes % 60)

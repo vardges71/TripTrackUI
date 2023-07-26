@@ -28,10 +28,9 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
         locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
         
-        locationManager.distanceFilter = kCLLocationAccuracyBest
+        locationManager.distanceFilter = 10
         locationManager.allowsBackgroundLocationUpdates = false
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.activityType = CLActivityType.automotiveNavigation
+        locationManager.desiredAccuracy = 10
         
     }
     
@@ -51,22 +50,37 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        guard let location = locations.first else { return }
+        guard let location = locations.last else { return }
         
         geocoder.reverseGeocodeLocation(location) { [weak self] (placemarks, error) in
             
-            self?.myCity = (placemarks?.first?.locality)!
-            self?.myState = (placemarks?.first?.administrativeArea)!
-            self?.myCountry = (placemarks?.first?.country)!
+            if let city = placemarks?.first?.locality {
+                DispatchQueue.main.async {
+                    self?.myCity = city
+                }
+            }
+            if let state = placemarks?.first?.administrativeArea {
+                DispatchQueue.main.async {
+                    self?.myState = state
+                }
+            }
+            if let country = placemarks?.first?.country {
+                DispatchQueue.main.async {
+                    self?.myCountry = country
+                }
+            }
+//            self?.myCity = (placemarks?.first?.locality)!
+//            self?.myState = (placemarks?.first?.administrativeArea)!
+//            self?.myCountry = (placemarks?.first?.country)!
             
-            self?.fullAddress = "\((placemarks?.first?.subThoroughfare)!) \((placemarks?.first?.thoroughfare)!),\n\((placemarks?.first?.locality)!), \((placemarks?.first?.administrativeArea)!),\n\((placemarks?.first?.postalCode)!), \((placemarks?.first?.country)!)"
+//            self?.fullAddress = "\((placemarks?.first?.subThoroughfare)!) \((placemarks?.first?.thoroughfare)!),\n\(self!.myCity), \(self!.myState),\n\((placemarks?.first?.postalCode)!), \(self!.myCountry)"
             
             self!.loc.curCity = self!.myCity
             self!.loc.curState = self!.myState
             self!.loc.curCountry = self!.myCountry
             
 //            print("FROM LOCATION: \(self!.loc.curCity), \(self!.loc.curState). \(self!.loc.curCountry)")
-            print("FROM LOCATION: \(self!.fullAddress)")
+//            print("FROM LOCATION: \(self!.fullAddress)")
                 
         }
         
