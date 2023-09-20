@@ -16,6 +16,8 @@ struct AboutPrivacyView: View {
     let appVersionString: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
     let buildNumber: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
     
+    var currentYear = Date.now.formatted(.dateTime.year())
+    
 //    MARK: - BODY
     var body: some View {
         
@@ -29,7 +31,7 @@ struct AboutPrivacyView: View {
                         .font(.title2)
                     Text("Version \(appVersionString) (#\(buildNumber))")
                         .font(.footnote)
-                    Text("©2023 Vardges Gasparyan. All Rights Reserved")
+                    Text("©\(currentYear) Vardges Gasparyan. All Rights Reserved")
                     Divider()
                     PrivacyView()
                 }

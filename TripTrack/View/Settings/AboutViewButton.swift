@@ -34,18 +34,18 @@ struct AboutViewButton: View {
                 }
                 .sheet(isPresented: $showPrivacyPolicy) {
                     AboutPrivacyView()
-//                        .overlay(
-//                            Button(action: {
-//                                showPrivacyPolicy = false
-//                            }) {
-//                                Image(systemName: "xmark.circle.fill")
-//                                    .font(.title3)
-//                                    .foregroundColor(.gray)
-//                            }
-//                            .padding(.top, 16)
-//                            .padding(.trailing, 16)
-//                            , alignment: .topTrailing
-//                        )
+                        .overlay(
+                            Button(action: {
+                                showPrivacyPolicy = false
+                            }) {
+                                Image(systemName: "xmark.circle.fill")
+                                    .font(.title3)
+                                    .foregroundColor(.gray)
+                            }
+                            .padding(.top, 16)
+                            .padding(.trailing, 16)
+                            , alignment: .topTrailing
+                        )
                 }
             }
         }

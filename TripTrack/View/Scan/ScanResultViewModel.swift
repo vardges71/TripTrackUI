@@ -141,7 +141,9 @@ class ScanResultViewModel: ObservableObject {
     
     func finishPointButtonTapped() {
         
-        locMan.startUpdatingLocation()
+//        locMan.startUpdatingLocation()
+        let finishLocation = String(self.locMan.myCity + ", " + self.locMan.myState + ". " + self.locMan.myCountry)
+//        let finishLocation = String(self.locMan.fullAddress)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
             
@@ -150,7 +152,7 @@ class ScanResultViewModel: ObservableObject {
             let error = self.validateData(vehicle: self.vehicle)
             
             let trId = UserDefaults.standard.string(forKey: "lastTripID")
-            let finishLocation = String(self.locMan.myCity + ", " + self.locMan.myState + ". " + self.locMan.myCountry)
+            
             let finishDate = Utilities.curDateTimeForDB()
             let userID = Auth.auth().currentUser?.uid
             
@@ -180,7 +182,7 @@ class ScanResultViewModel: ObservableObject {
                     print("ERRRRRRRRROOOOOOORRRRRR !!!!! \(String(describing: error))")
                 }
             })
-//            self.locMan.stopUpdatingLocation()
+            self.locMan.stopUpdatingLocation()
             self.showMainView.toggle()
         })
     }

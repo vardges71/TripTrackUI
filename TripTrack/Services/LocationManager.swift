@@ -73,7 +73,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
 //            self?.myState = (placemarks?.first?.administrativeArea)!
 //            self?.myCountry = (placemarks?.first?.country)!
             
-//            self?.fullAddress = "\((placemarks?.first?.subThoroughfare)!) \((placemarks?.first?.thoroughfare)!),\n\(self!.myCity), \(self!.myState),\n\((placemarks?.first?.postalCode)!), \(self!.myCountry)"
+            self?.fullAddress = "\((placemarks?.first?.subThoroughfare)!) \((placemarks?.first?.thoroughfare)!),\n\(self!.myCity), \(self!.myState),\n\((placemarks?.first?.postalCode)!), \(self!.myCountry)"
             
             self!.loc.curCity = self!.myCity
             self!.loc.curState = self!.myState
@@ -84,6 +84,6 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
                 
         }
         
-        locationManager.stopUpdatingLocation()
+//        locationManager.stopUpdatingLocation()
     }
 }
