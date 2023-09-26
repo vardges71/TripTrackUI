@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class Location: ObservableObject {
+public class Location: ObservableObject {
     
     @Published var curCity: String = ""
     @Published var curState: String = ""

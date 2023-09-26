@@ -10,6 +10,7 @@ import CoreLocation
 import Firebase
 import FirebaseDatabase
 import UIKit
+import SwiftUI
 
 protocol UploadVehicleDelegate: AnyObject {
     
@@ -69,12 +70,9 @@ class ScanResultViewModel: ObservableObject {
     
     func startPointButtonTapped() {
         
-        locMan.startUpdatingLocation()
+        self.locMan.startUpdatingLocation()
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-            
-//            print("Start button tapped, \(self.locMan.myCity), \(self.locMan.myState)")
-            
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
             
             // Validate the fields
             let error = self.validateData(vehicle: self.vehicle)
@@ -94,6 +92,7 @@ class ScanResultViewModel: ObservableObject {
                 let vin = self.vinRes
                 let make = self.makeRes
                 let model = self.modelRes
+                
                 let startLocation = String(self.locMan.myCity + ", " + self.locMan.myState + ". " + self.locMan.myCountry)
                 //            let startLocation = String(loc.curCity + ", " + loc.curCountry)
                 let startDate = Utilities.curDateTimeForDB()
@@ -142,12 +141,11 @@ class ScanResultViewModel: ObservableObject {
     func finishPointButtonTapped() {
         
 //        locMan.startUpdatingLocation()
+        
         let finishLocation = String(self.locMan.myCity + ", " + self.locMan.myState + ". " + self.locMan.myCountry)
 //        let finishLocation = String(self.locMan.fullAddress)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-            
-//            print("Finish button tapped, \(self.locMan.myState). \(self.locMan.myCountry)")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
             
             let error = self.validateData(vehicle: self.vehicle)
             
