@@ -5,21 +5,33 @@
 //  Created by Vardges Gasparyan on 2023-07-02.
 //
 
-import UIKit
+import SwiftUI
 import CoreLocation
+import MapKit
+import Combine
 
 class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
 
     private let locationManager = CLLocationManager()
     private let geocoder = CLGeocoder()
     
-    let loc = Location()
+    let objectWillChange = PassthroughSubject<Void, Never>()
     
-    @Published var myState: String = ""
-    @Published var myCity: String = ""
-    @Published var myCountry: String = ""
+    @Published var loc = Location()
     
-    @Published var fullAddress: String = ""
+    @Published var myState: String = "" {
+        willSet { objectWillChange.send() }
+    }
+    @Published var myCity: String = "" {
+        willSet { objectWillChange.send() }
+    }
+    @Published var myCountry: String = "" {
+        willSet { objectWillChange.send() }
+    }
+    
+    @Published var fullAddress: String = "" {
+        willSet { objectWillChange.send() }
+    }
     
     override init() {
         super.init()
@@ -28,16 +40,17 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
         locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
         
-        locationManager.distanceFilter = 10
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = kCLDistanceFilterNone
+        locationManager.pausesLocationUpdatesAutomatically = true
         locationManager.allowsBackgroundLocationUpdates = false
-        locationManager.desiredAccuracy = 10
         
     }
     
     func startUpdatingLocation() {
         
         locationManager.startUpdatingLocation()
-        
+        print("FROM START FUNCTION: \(self.myCity), \(self.myState). \(self.myCountry)")
     }
     
     func stopUpdatingLocation() {
@@ -50,40 +63,50 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        guard let location = locations.last else { return }
+        guard let location = locations.first else { return }
         
-        geocoder.reverseGeocodeLocation(location) { [weak self] (placemarks, error) in
+        geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
             
             if let city = placemarks?.first?.locality {
                 DispatchQueue.main.async {
-                    self?.myCity = city
+                    self.myCity = city
+                    self.loc.curCity = city
                 }
             }
             if let state = placemarks?.first?.administrativeArea {
                 DispatchQueue.main.async {
-                    self?.myState = state
+                    self.myState = state
+                    self.loc.curState = state
                 }
             }
             if let country = placemarks?.first?.country {
                 DispatchQueue.main.async {
-                    self?.myCountry = country
+                    self.myCountry = country
+                    self.loc.curCountry = country
                 }
             }
-//            self?.myCity = (placemarks?.first?.locality)!
-//            self?.myState = (placemarks?.first?.administrativeArea)!
-//            self?.myCountry = (placemarks?.first?.country)!
             
-            self?.fullAddress = "\((placemarks?.first?.subThoroughfare)!) \((placemarks?.first?.thoroughfare)!),\n\(self!.myCity), \(self!.myState),\n\((placemarks?.first?.postalCode)!), \(self!.myCountry)"
+//            self.fullAddress = "\((placemarks?.first?.subThoroughfare)!) \((placemarks?.first?.thoroughfare)!),\n\(self.myCity), \(self.myState),\n\((placemarks?.first?.postalCode)!), \(self.myCountry)"
             
-            self!.loc.curCity = self!.myCity
-            self!.loc.curState = self!.myState
-            self!.loc.curCountry = self!.myCountry
+            self.loc.curCity = self.myCity
+            self.loc.curState = self.myState
+            self.loc.curCountry = self.myCountry
             
-//            print("FROM LOCATION: \(self!.loc.curCity), \(self!.loc.curState). \(self!.loc.curCountry)")
-//            print("FROM LOCATION: \(self!.fullAddress)")
+            print("FROM LOCATION MANAGER: \(self.loc.curCity), \(self.loc.curState). \(self.loc.curCountry)")
+//            print("FROM LOCATION: \(self.fullAddress)")
                 
         }
         
 //        locationManager.stopUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error.localizedDescription)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            manager.startUpdatingLocation()
+        }
     }
 }

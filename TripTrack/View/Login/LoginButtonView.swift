@@ -17,6 +17,8 @@ struct LoginButtonView: View {
     @State private var showMainView = false
     @State private var errorDescription: String = ""
     
+    let notificationGenerator = UINotificationFeedbackGenerator()
+    
 //    MARK: - BODY
     
     var body: some View {
@@ -41,8 +43,10 @@ struct LoginButtonView: View {
                 
                 self.showingAlert.toggle()
                 self.errorDescription = error!.localizedDescription
+                notificationGenerator.notificationOccurred(.error)
             } else {
                 
+                notificationGenerator.notificationOccurred(.success)
                 showMainView.toggle()
                 print("User logged in \(user.email)")
             }

@@ -111,14 +111,11 @@ struct RegisterButtonView: View {
                     
                     db.setValue(["fullname" : fullName, "email" : email]) { (result, err) in
                         
-//                        if error != nil {
-//
-//                            //Show erroe message
-//                            self.showError("Error saving user data")
-//                        }
                     }
                 }
             }
+            
+            
         }
     }
 }
@@ -127,5 +124,7 @@ struct RegisterButtonView: View {
 struct RegisterButtonView_Previews: PreviewProvider {
     static var previews: some View {
         RegisterButtonView(fullName: .constant(""), email: .constant(""), password: .constant(""), re_password: .constant(""))
+            .previewLayout(.sizeThatFits)
+            .padding()
     }
 }

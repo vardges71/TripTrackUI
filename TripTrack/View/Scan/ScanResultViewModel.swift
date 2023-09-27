@@ -36,7 +36,7 @@ class ScanResultViewModel: ObservableObject {
     var trip: Trip = Trip()
     var lTripID = UserDefaults.standard.string(forKey: "lastTripID")
     
-    let locMan = LocationManager()
+    @ObservedObject var locMan = LocationManager()
     
     func load() {
         
@@ -70,8 +70,8 @@ class ScanResultViewModel: ObservableObject {
     
     func startPointButtonTapped() {
         
-        self.locMan.startUpdatingLocation()
-
+//        self.locMan.startUpdatingLocation()
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
             
             // Validate the fields
@@ -94,7 +94,7 @@ class ScanResultViewModel: ObservableObject {
                 let model = self.modelRes
                 
                 let startLocation = String(self.locMan.myCity + ", " + self.locMan.myState + ". " + self.locMan.myCountry)
-                //            let startLocation = String(loc.curCity + ", " + loc.curCountry)
+                //                let startLocation = String(self.location.curCity + ", " + self.location.curCountry)
                 let startDate = Utilities.curDateTimeForDB()
                 let userID = Auth.auth().currentUser?.uid
                 
@@ -140,7 +140,7 @@ class ScanResultViewModel: ObservableObject {
     
     func finishPointButtonTapped() {
         
-//        locMan.startUpdatingLocation()
+//        self.locMan.startUpdatingLocation()
         
         let finishLocation = String(self.locMan.myCity + ", " + self.locMan.myState + ". " + self.locMan.myCountry)
 //        let finishLocation = String(self.locMan.fullAddress)
@@ -180,9 +180,9 @@ class ScanResultViewModel: ObservableObject {
                     print("ERRRRRRRRROOOOOOORRRRRR !!!!! \(String(describing: error))")
                 }
             })
-            self.locMan.stopUpdatingLocation()
             self.showMainView.toggle()
         })
+        self.locMan.stopUpdatingLocation()
     }
     
     // MARK: - Validate Data

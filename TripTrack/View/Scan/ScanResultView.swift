@@ -16,6 +16,7 @@ struct ScanResultView: View {
     
     @StateObject var scanResultVM = ScanResultViewModel()
     @StateObject var locMan = LocationManager()
+//    @StateObject var location = Location()
     
     @State private var isResScan = false
     @State private var showMainView = false

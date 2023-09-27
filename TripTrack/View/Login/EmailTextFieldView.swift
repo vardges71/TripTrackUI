@@ -35,5 +35,7 @@ struct EmailTextFieldView: View {
 struct EmailTextFieldView_Previews: PreviewProvider {
     static var previews: some View {
         EmailTextFieldView(user: User())
+            .previewLayout(.sizeThatFits)
+            .padding()
     }
 }
