@@ -140,7 +140,7 @@ class ScanResultViewModel: ObservableObject {
     
     func finishPointButtonTapped() {
         
-//        locMan.startUpdatingLocation()
+        self.locMan.startUpdatingLocation()
         
         let finishLocation = String(self.locMan.myCity + ", " + self.locMan.myState + ". " + self.locMan.myCountry)
 //        let finishLocation = String(self.locMan.fullAddress)
